@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Tagesschrift&display=swap');
+
+* { box-sizing: border-box; }
+html { min-width: 320px; }
+body {
+    position: relative;
+    z-index: 0;
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: clamp(12px, 3vw, 36px);
+    background: #f7f7f7 url("img/back8.jpg") repeat;
+    font-family: "Tagesschrift", system-ui, sans-serif;
+}
+body::after {
+    position: fixed;
+    z-index: -1;
+    inset: 0;
+    background: rgba(106, 123, 162, .2);
+    clip-path: circle(38% at 100% 70%);
+    content: "";
+    pointer-events: none;
+}
+.account-page {
+    width: min(100%, 760px);
+    padding: clamp(18px, 3vw, 36px);
+    border: 1px solid rgba(255, 255, 255, .75);
+    border-radius: 24px;
+    background: rgba(255, 255, 255, .8);
+    box-shadow: 0 18px 55px rgba(43, 57, 78, .1);
+}
+.page-toolbar { display: flex; justify-content: flex-start; margin-bottom: 22px; }
+.back-button {
+    display: inline-flex;
+    min-height: 42px;
+    align-items: center;
+    gap: 9px;
+    padding: 7px 17px;
+    border: 1px solid rgba(83, 103, 130, .22);
+    border-radius: 12px;
+    color: #455a76;
+    background: rgba(255, 255, 255, .85);
+    font-family: "Tagesschrift", system-ui, sans-serif;
+    font-size: .95rem;
+    cursor: pointer;
+    transition: background .2s ease, transform .2s ease;
+}
+.back-button:hover { transform: translateY(-1px); background: #fff; }
+.back-button span { font-family: Arial, sans-serif; font-size: 1.2rem; }
+.account-form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    width: 100%;
+    padding: clamp(18px, 4vw, 38px);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, .72);
+}
+.account-form input {
+    width: 100%;
+    min-width: 0;
+    min-height: 52px;
+    padding: 12px 15px;
+    border: 1px solid rgba(83, 103, 130, .2);
+    border-radius: 11px;
+    outline: none;
+    background: #fff;
+    font: 1rem "Tagesschrift", system-ui, sans-serif;
+    text-align: left;
+    transition: border-color .2s ease, box-shadow .2s ease;
+}
+.account-form input:focus { border-color: #71839f; box-shadow: 0 0 0 3px rgba(106, 123, 162, .13); }
+.account-form input::placeholder { color: #7c838c; opacity: 1; }
+.account-form > button {
+    grid-column: 1 / -1;
+    min-height: 50px;
+    margin-top: 4px;
+    padding: 10px 20px;
+    border: 0;
+    border-radius: 11px;
+    color: #fff;
+    background: #6a7ba2;
+    font: 1.2rem "Tagesschrift", system-ui, sans-serif;
+    cursor: pointer;
+    transition: background .2s ease;
+}
+.account-form > button:hover { background: #536782; }
+
+@media (max-width: 560px) {
+    body { padding: 10px; }
+    .account-page { padding: 14px; border-radius: 18px; }
+    .page-toolbar { margin-bottom: 15px; }
+    .account-form { grid-template-columns: 1fr; gap: 11px; padding: 17px; }
+    .account-form input { min-height: 48px; font-size: .95rem; }
+    .account-form > button { grid-column: auto; min-height: 47px; font-size: 1.05rem; }
+}

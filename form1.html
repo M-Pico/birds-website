@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Account</title>
+    <link rel="icon" href="img/MP_LOGO.png" type="image/x-icon">
+    <link rel="stylesheet" href="form1.css">
+</head>
+<body>
+    <main class="account-page">
+        <div class="page-toolbar">
+            <button class="back-button" type="button" onclick="if (history.length > 1) history.back(); else location.href = 'index.html';">
+                <span aria-hidden="true">→</span> رجوع
+            </button>
+        </div>
+
+        <form class="account-form">
+            <input type="text" placeholder="first name">
+            <input type="text" placeholder="last name">
+            <input type="text" placeholder="user name">
+            <input type="email" placeholder="email">
+            <input type="password" placeholder="password">
+            <input type="password" placeholder="confirm password">
+            <button type="submit">Send</button>
+        </form>
+    </main>
+</body>
+</html>
